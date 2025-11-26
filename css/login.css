@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #ba8f44;
+    --primary-color-darker: #a67c3a; /* Un tono más oscuro para el hover */
+    --light-bg: #f7f7cc;
+    --dark-bg: #fee9c4;
+    --container-bg: #ffffff;
+    --light-text: #fff;
+    --dark-text: #333;
+    --muted-text: #6c757d; /* Color de texto sutil de Bootstrap */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--light-bg), var(--dark-bg));
+    display: grid;
+    place-items: center; /* La forma moderna y perfecta de centrar contenido */
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem; /* Espacio para que el cuadro no pegue en los bordes */
+    box-sizing: border-box;
+}
+
+/* --- ENLACE PARA VOLVER --- */
+.volver {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: var(--dark-text);
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10;
+    transition: color 0.2s ease-in-out;
+}
+.volver:hover {
+    color: var(--primary-color);
+}
+
+/* --- EL CUADRO PRINCIPAL QUE CONTIENE EL FORMULARIO --- */
+.form-wrapper {
+    width: 100%;
+    max-width: 450px; /* Ancho ideal para un formulario de login/registro */
+    background: var(--container-bg);
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* --- ESTILOS DENTRO DEL FORMULARIO --- */
+form h1 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+form .text-muted {
+    display: block; /* Asegura que el span ocupe su propia línea */
+    margin-bottom: 2rem;
+}
+
+/* --- BOTÓN PRINCIPAL --- */
+.btn-submit {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--light-text);
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-color-darker);
+}
+
+/* --- ENLACES INTERNOS --- */
+.forgot-password {
+    display: block;
+    margin-bottom: 1.5rem;
+    text-align: right;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--muted-text);
+}
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+/* --- ENLACE INFERIOR PARA REGISTRARSE --- */
+.register-link {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef; /* Línea separadora sutil */
+    font-size: 14px;
+}
+
+.register-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/*
+============================================================
+=== ADAPTACIÓN A MÓVILES (RESPONSIVIDAD) ===
+============================================================
+*/
+@media (max-width: 500px) {
+    body {
+        padding: 0; /* Sin padding en pantallas muy pequeñas */
+    }
+    
+    .form-wrapper {
+        width: 100%;
+        min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+        border-radius: 0;
+        box-shadow: none;
+        padding: 2rem 1.5rem;
+        /* Centra el contenido verticalmente en la vista móvil */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .volver {
+        background: rgba(255, 255, 255, 0.7);
+        padding: 0.5rem 1rem;
+        border-radius: 0 0 15px 0;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestión de Usuarios</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../../css/estilos.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Lista de Membresias</h2>
+
+    <div class="input-group mb-3">
+      <input type="text" id="buscarId" class="form-control" placeholder="Buscar membresia por ID">
+      <button class="btn btn-outline-primary" onclick="buscarMembresiaPorId()">Buscar</button>
+      <button class="btn btn-outline-secondary" onclick="recargarMembresias()">Ver Todos</button>
+    </div>
+
+    <div class="d-flex justify-content-end mb-3">
+      <!--  Botón con ID para manejarlo desde JavaScript -->
+      <button class="btn btn-success" id="btnNuevaMembresia">+ Nueva Membresia</button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead class="table-primary text-center">
+        <tr>
+          <th>ID Membresia</th>
+          <th>Nombre de membresia</th>
+          <th>Valor de membresia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-membresias" class="text-center"></tbody>
+    </table>
+
+    <nav>
+      <ul class="pagination justify-content-center" id="paginacion"></ul>
+    </nav>
+  </div>
+
+  <!--  Contenedor donde se insertan los modales dinámicamente -->
+  <div id="modales"></div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"
+  ></script>
+  <script type="module" src="../../js/membresias/main.js"></script>
+</body>
+</html>

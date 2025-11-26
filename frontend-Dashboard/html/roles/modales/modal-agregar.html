@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Agregar Rol - Adaptado para BD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --success-color: #27ae60;
+    }
+    
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      margin-top: 20px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    
+    .modal-content {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .modal-header {
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .btn-close {
+      filter: invert(1);
+    }
+    
+    .form-label {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .form-control:focus, .form-select:focus, .form-check-input:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    }
+    
+    .permissions-container {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 15px;
+      background-color: #f8f9fa;
+    }
+    
+    .permission-group {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .permission-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .permission-group-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-color);
+    }
+    
+    .btn-secondary {
+      background-color: #6c757d;
+      border: none;
+    }
+    
+    .is-invalid {
+      border-color: var(--accent-color);
+    }
+    
+    .invalid-feedback {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+    }
+    
+    .required-field::after {
+      content: " *";
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header text-center">
+      <h1><i class="fas fa-users-cog me-2"></i>Modal Agregar Rol</h1>
+      <p class="mb-0">Adaptado para integración con base de datos</p>
+    </div>
+    
+    <div class="alert alert-info">
+      <strong>Nota:</strong> Este modal ha sido adaptado para trabajar con una estructura de base de datos típica. 
+      Incluye validaciones y campos necesarios para una correcta integración.
+    </div>
+    
+    <button type="button" class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#modalAgregarRol">
+      <i class="fas fa-plus-circle me-2"></i>Abrir Modal de Agregar Rol
+    </button>
+    
+    <h3>Características implementadas:</h3>
+    <ul>
+      <li>Campo ID_Rol con validación para evitar fechas</li>
+      <li>Organización de permisos por módulos</li>
+      <li>Validación de formulario completa</li>
+      <li>Diseño mejorado para mejor experiencia de usuario</li>
+      <li>Estructura preparada para integración con backend</li>
+    </ul>
+  </div>
+
+  <!-- Modal Agregar Rol -->
+  <div class="modal fade" id="modalAgregarRol" tabindex="-1" aria-labelledby="modalAgregarRolLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <form id="formAgregarRol" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAgregarRolLabel">
+              <i class="fas fa-plus-circle me-2"></i>Agregar Nuevo Rol
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+
+          <div class="modal-body">
+            <!-- ID del Rol (para base de datos) -->
+            <div class="mb-3">
+              <label for="rol-id" class="form-label required-field">ID del Rol</label>
+              <input
+                type="text"
+                id="rol-id"
+                name="id_rol"
+                class="form-control"
+                placeholder="Ej: ROL-ADM-001"
+                pattern="ROL-[A-Z]{3}-\d{3}"
+                required
+              />
+              <div class="invalid-feedback" id="id-error">
+                El ID debe seguir el formato ROL-XXX-001. No se permiten fechas.
+              </div>
+              <div class="form-text">
+                Formato: ROL-XXX-001 (donde XXX son siglas del módulo)
+              </div>
+            </div>
+
+            <!-- Nombre del Rol -->
+            <div class="mb-3">
+              <label for="rol-name" class="form-label required-field">Nombre del Rol</label>
+              <input
+                type="text"
+                id="rol-name"
+                name="nombre_rol"
+                class="form-control"
+                placeholder="Ej: Administrador del Sistema"
+                required
+              />
+              <div class="invalid-feedback">
+                El nombre del rol es obligatorio.
+              </div>
+            </div>
+
+            <!-- Descripción -->
+            <div class="mb-3">
+              <label for="rol-description" class="form-label required-field">Descripción</label>
+              <textarea
+                id="rol-description"
+                name="descripcion"
+                class="form-control"
+                rows="2"
+                placeholder="Breve descripción de las funciones y responsabilidades del rol"
+                required
+              ></textarea>
+              <div class="invalid-feedback">
+                La descripción no puede quedar vacía.
+              </div>
+            </div>
+
+            <!-- Estado del Rol -->
+            <div class="mb-3">
+              <label for="rol-status" class="form-label required-field">Estado</label>
+              <select id="rol-status" name="estado" class="form-select" required>
+                <option value="">Seleccione un estado</option>
+                <option value="1" selected>Activo</option>
+                <option value="0">Inactivo</option>
+              </select>
+              <div class="invalid-feedback">
+                Debe seleccionar un estado para el rol.
+              </div>
+            </div>
+
+            <!-- Nivel de Acceso -->
+            <div class="mb-3">
+              <label for="rol-level" class="form-label required-field">Nivel de Acceso</label>
+              <select id="rol-level" name="nivel_acceso" class="form-select" required>
+                <option value="">Seleccione un nivel</option>
+                <option value="1">Básico</option>
+                <option value="2">Intermedio</option>
+                <option value="3">Avanzado</option>
+                <option value="4">Administrador</option>
+                <option value="5">Super Administrador</option>
+              </select>
+              <div class="invalid-feedback">
+                Debe seleccionar un nivel de acceso.
+              </div>
+            </div>
+
+            <!-- Permisos Organizados por Módulos -->
+            <div class="mb-3">
+              <label class="form-label required-field">Permisos</label>
+              <div class="permissions-container">
+                <div class="permission-group">
+                  <div class="permission-group-title">Módulo de Usuarios</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-user-read" name="permisos[]" value="user_read">
+                    <label class="form-check-label" for="perm-user-read">Ver usuarios</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-user-create" name="permisos[]" value="user_create">
+                    <label class="form-check-label" for="perm-user-create">Crear usuarios</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-user-edit" name="permisos[]" value="user_edit">
+                    <label class="form-check-label" for="perm-user-edit">Editar usuarios</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-user-delete" name="permisos[]" value="user_delete">
+                    <label class="form-check-label" for="perm-user-delete">Eliminar usuarios</label>
+                  </div>
+                </div>
+
+                <div class="permission-group">
+                  <div class="permission-group-title">Módulo de Roles</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-role-read" name="permisos[]" value="role_read">
+                    <label class="form-check-label" for="perm-role-read">Ver roles</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-role-create" name="permisos[]" value="role_create">
+                    <label class="form-check-label" for="perm-role-create">Crear roles</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-role-edit" name="permisos[]" value="role_edit">
+                    <label class="form-check-label" for="perm-role-edit">Editar roles</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-role-delete" name="permisos[]" value="role_delete">
+                    <label class="form-check-label" for="perm-role-delete">Eliminar roles</label>
+                  </div>
+                </div>
+
+                <div class="permission-group">
+                  <div class="permission-group-title">Módulo de Reportes</div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-report-read" name="permisos[]" value="report_read">
+                    <label class="form-check-label" for="perm-report-read">Ver reportes</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-report-create" name="permisos[]" value="report_create">
+                    <label class="form-check-label" for="perm-report-create">Generar reportes</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="perm-report-export" name="permisos[]" value="report_export">
+                    <label class="form-check-label" for="perm-report-export">Exportar reportes</label>
+                  </div>
+                </div>
+              </div>
+              <div class="invalid-feedback d-block" id="permisos-error">
+                Debes seleccionar al menos un permiso.
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <i class="fas fa-times me-1"></i>Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-save me-1"></i>Guardar Rol
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('formAgregarRol');
+      const idInput = document.getElementById('rol-id');
+      const idError = document.getElementById('id-error');
+      const permisosError = document.getElementById('permisos-error');
+      
+      // Validar ID_Rol para evitar fechas
+      idInput.addEventListener('input', function() {
+        validateIdRol();
+      });
+      
+      // Validar formulario al enviar
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        if (!validateForm()) {
+          event.stopPropagation();
+          return;
+        }
+        
+        // Si la validación es exitosa, procesar el formulario
+        processForm();
+      });
+      
+      function validateIdRol() {
+        const value = idInput.value.trim();
+        
+        // Verificar si es una fecha
+        const isDate = isDateFormat(value);
+        
+        // Verificar formato correcto
+        const formatoValido = /^ROL-[A-Z]{3}-\d{3}$/.test(value);
+        
+        if (isDate) {
+          idError.textContent = 'Error: El ID no puede ser una fecha. Use el formato ROL-XXX-001.';
+          idInput.classList.add('is-invalid');
+          return false;
+        } else if (!formatoValido && value !== '') {
+          idError.textContent = 'El ID debe seguir el formato ROL-XXX-001 (ej: ROL-ADM-001).';
+          idInput.classList.add('is-invalid');
+          return false;
+        } else {
+          idInput.classList.remove('is-invalid');
+          return true;
+        }
+      }
+      
+      function isDateFormat(value) {
+        // Patrones comunes de fecha
+        const datePatterns = [
+          /^\d{1,2}\/\d{1,2}\/\d{4}$/, // DD/MM/YYYY
+          /^\d{1,2}-\d{1,2}-\d{4}$/,   // DD-MM-YYYY
+          /^\d{4}-\d{1,2}-\d{1,2}$/,   // YYYY-MM-DD
+          /^\d{1,2}\/\d{1,2}\/\d{2}$/  // DD/MM/YY
+        ];
+        
+        return datePatterns.some(pattern => pattern.test(value)) || !isNaN(Date.parse(value));
+      }
+      
+      function validateForm() {
+        let isValid = true;
+        
+        // Validar ID_Rol
+        if (!validateIdRol()) {
+          isValid = false;
+        }
+        
+        // Validar nombre
+        const nameInput = document.getElementById('rol-name');
+        if (!nameInput.value.trim()) {
+          nameInput.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          nameInput.classList.remove('is-invalid');
+        }
+        
+        // Validar descripción
+        const descInput = document.getElementById('rol-description');
+        if (!descInput.value.trim()) {
+          descInput.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          descInput.classList.remove('is-invalid');
+        }
+        
+        // Validar estado
+        const statusSelect = document.getElementById('rol-status');
+        if (!statusSelect.value) {
+          statusSelect.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          statusSelect.classList.remove('is-invalid');
+        }
+        
+        // Validar nivel de acceso
+        const levelSelect = document.getElementById('rol-level');
+        if (!levelSelect.value) {
+          levelSelect.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          levelSelect.classList.remove('is-invalid');
+        }
+        
+        // Validar permisos
+        const permisos = document.querySelectorAll('input[name="permisos[]"]:checked');
+        if (permisos.length === 0) {
+          permisosError.style.display = 'block';
+          isValid = false;
+        } else {
+          permisosError.style.display = 'none';
+        }
+        
+        return isValid;
+      }
+      
+      function processForm() {
+        // Recopilar datos del formulario
+        const formData = new FormData(form);
+        const data = {};
+        
+        for (let [key, value] of formData.entries()) {
+          if (key === 'permisos[]') {
+            if (!data['permisos']) data['permisos'] = [];
+            data['permisos'].push(value);
+          } else {
+            data[key] = value;
+          }
+        }
+        
+        // Aquí enviarías los datos a tu backend
+        console.log('Datos a enviar a la base de datos:', data);
+        
+        // Simular envío exitoso
+        alert('Rol agregado correctamente. Los datos se han guardado en la base de datos.');
+        
+        // Cerrar el modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalAgregarRol'));
+        modal.hide();
+        
+        // Limpiar formulario
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>

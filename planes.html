@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planes de membresía de CowShop para acceder a beneficios exclusivos en la compra de ganado bovino.">
+    <meta name="keywords" content="planes, membresía, ganado bovino, comprar vacas, descuentos ganado">
+    <meta name="author" content="CowShop">
+    <title>CowShop - Planes de Membresía</title>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tu CSS unificado -->
+    <link rel="stylesheet" href="css/planes.css">
+    
+    <link rel="icon" type="image/png" href="media/favicon.png">
+    <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <!-- ================== HEADER / NAVBAR ================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom-bg fixed-top shadow-sm" id="main-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="CowShop - Página de inicio">
+                    <img src="media/logotipo.png" alt="CowShop - Tienda especializada en ganado bovino" class="logo-img" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="primary-navigation">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="planes.html">Planes</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="cart-icon-container">
+                            <a href="carrito.html" class="text-white" aria-label="Ver carrito de compras">
+                                <i class="fas fa-shopping-cart fa-lg"></i>
+                                <span class="cart-badge">0</span>
+                            </a>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="login.html" class="btn btn-secondary">Iniciar sesión</a>
+                            <a href="registrarse.html" class="btn btn-outline-light">Registrarse</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- ================== HERO SECTION ================== -->
+        <section class="hero-section hero-planes text-white">
+            <div class="hero-overlay"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <h1 class="display-4 fw-bold animate-on-scroll">Nuestros <span>Planes</span></h1>
+                        <p class="lead hero-subtitle animate-on-scroll" data-delay="100">Encuentra el plan perfecto para tus necesidades y accede a beneficios exclusivos.</p>
+                        <div class="d-flex gap-2 justify-content-center justify-content-lg-start animate-on-scroll" data-delay="200">
+                            <a href="#pricing" class="btn btn-light btn-lg">Ver planes</a>
+                            <a href="contacto.html" class="btn btn-outline-light btn-lg">Contactar asesor</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 d-none d-lg-block animate-on-scroll" data-delay="300">
+                        <img src="media/planes.jpg" alt="Ganado pastando" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== PRICING PLANS SECTION ================== -->
+        <section id="pricing" class="py-5 my-5">
+            <div class="container">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="fw-bold">Elige tu Plan Ideal</h2>
+                    <p class="lead text-muted">Selecciona el que mejor se adapte a tus necesidades y presupuesto.</p>
+                    
+                    <div class="d-flex justify-content-center align-items-center mt-4 pricing-toggle">
+                        <span>Mensual</span>
+                        <div class="form-check form-switch mx-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="pricing-switch">
+                            <label class="form-check-label" for="pricing-switch"></label>
+                        </div>
+                        <span>Anual (Ahorra 20%)</span>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Plan Básico -->
+                    <div class="col animate-on-scroll">
+                        <div class="card h-100 shadow-sm plan-card overflow-hidden">
+                            <img src="media/image-100.png" class="card-img-top plan-image" alt="Ganado joven para plan básico">
+                            <div class="card-body d-flex flex-column">
+                                <h4 class="my-0 fw-normal text-center">Básico</h4>
+                                <h1 class="card-title pricing-card-title text-center" data-monthly-price="100.000" data-yearly-price="960.000">$100.000</h1>
+                                <small class="text-muted fw-light text-center price-period">/mes</small>
+                                <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+                                    <li><i class="fas fa-check text-success me-2"></i>Acceso a catálogo básico</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>1 asesoría mensual por correo</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Certificado de salud básico</li>
+                                    <li class="text-muted"><i class="fas fa-times text-danger me-2"></i>Descuentos especiales</li>
+                                </ul>
+                                <a href="registrarse.html?plan=basico" class="w-100 btn btn-lg btn-outline-secondary mt-auto">Seleccionar plan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Profesional (Destacado) -->
+                    <div class="col animate-on-scroll" data-delay="100">
+                        <div class="card h-100 shadow plan-card-featured overflow-hidden">
+                            <div class="plan-badge">Recomendado</div>
+                            <img src="media/plan2.jpg" class="card-img-top plan-image" alt="Ganado de alta calidad para plan profesional">
+                            <div class="card-body d-flex flex-column">
+                                <h4 class="my-0 fw-normal text-center">Profesional</h4>
+                                <h1 class="card-title pricing-card-title text-center" data-monthly-price="150.000" data-yearly-price="1.440.000">$150.000</h1>
+                                <small class="text-muted fw-light text-center price-period">/mes</small>
+                                <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+                                    <li><i class="fas fa-check text-success me-2"></i>Todo lo del plan Básico</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Acceso a catálogo premium</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>2 asesorías (email/llamada)</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>10% de descuento en compras</li>
+                                </ul>
+                                <a href="registrarse.html?plan=profesional" class="w-100 btn btn-lg btn-secondary mt-auto">Seleccionar plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Plan Premium -->
+                    <div class="col animate-on-scroll" data-delay="200">
+                        <div class="card h-100 shadow-sm plan-card overflow-hidden">
+                             <img src="media/plan3.jpg" class="card-img-top plan-image" alt="Ganado de élite para plan premium">
+                             <div class="card-body d-flex flex-column">
+                                <h4 class="my-0 fw-normal text-center">Premium</h4>
+                                <h1 class="card-title pricing-card-title text-center" data-monthly-price="200.000" data-yearly-price="1.920.000">$200.000</h1>
+                                <small class="text-muted fw-light text-center price-period">/mes</small>
+                                <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+                                    <li><i class="fas fa-check text-success me-2"></i>Todo lo del plan Profesional</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Asesoría prioritaria ilimitada</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>1 visita técnica anual</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>15% de descuento en compras</li>
+                                </ul>
+                                <a href="registrarse.html?plan=premium" class="w-100 btn btn-lg btn-outline-secondary mt-auto">Seleccionar plan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ================== TABLA COMPARATIVA ================== -->
+        <section class="feature-comparison py-5">
+            <div class="container">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="fw-bold">Compara los Planes en Detalle</h2>
+                    <p class="lead text-muted">Todas las características, lado a lado.</p>
+                </div>
+                <div class="table-responsive animate-on-scroll">
+                    <table class="table table-striped table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="text-start">Característica</th>
+                                <th scope="col">Básico</th>
+                                <th scope="col">Profesional</th>
+                                <th scope="col">Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="text-start">Precio (Mensual)</th>
+                                <td>$100.000</td>
+                                <td>$150.000</td>
+                                <td>$200.000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Acceso a catálogo premium</th>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Asesorías</th>
+                                <td>1 por correo</td>
+                                <td>2 (correo/llamada)</td>
+                                <td>Ilimitada y prioritaria</td>
+                            </tr>
+                             <tr>
+                                <th scope="row" class="text-start">Descuento en compras</th>
+                                <td>Ninguno</td>
+                                <td>10%</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Visitas técnicas a finca</th>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td class="text-muted">Con costo adicional</td>
+                                <td>1 incluida al año</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-start">Análisis genético</th>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== FAQ SECTION ================== -->
+        <section class="py-5 my-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5 animate-on-scroll">
+                    <h2 class="fw-bold">Preguntas Frecuentes</h2>
+                    <p class="lead text-muted">Resolvemos tus dudas más comunes sobre nuestros planes.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-flush animate-on-scroll" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                                        ¿Puedo cambiar de plan más adelante?
+                                    </button>
+                                </h2>
+                                <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Sí, puedes cambiar de plan en cualquier momento desde tu panel de usuario. El cambio será efectivo al inicio del siguiente ciclo de facturación.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                                        ¿Qué métodos de pago aceptan?
+                                    </button>
+                                </h2>
+                                <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Aceptamos tarjetas de crédito (Visa, Mastercard), transferencias bancarias a través de PSE, Nequi y Daviplata.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                                        ¿Los planes incluyen el precio del ganado?
+                                    </button>
+                                </h2>
+                                <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        No, los planes son una membresía que te da acceso a beneficios como asesorías y descuentos. El costo de cada animal se paga por separado.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ================== FINAL CTA SECTION ================== -->
+        <section class="cta-section text-white text-center py-5">
+             <div class="container">
+                <h2 class="display-5 fw-bold animate-on-scroll">¿Aún no estás seguro?</h2>
+                <p class="lead my-4 animate-on-scroll" data-delay="100">Contacta a uno de nuestros asesores expertos sin compromiso.</p>
+                <div class="animate-on-scroll" data-delay="200">
+                    <a href="contacto.html" class="btn btn-light btn-lg px-4 gap-3"><i class="fas fa-headset me-2"></i>Hablar con un asesor</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================== FOOTER ================== -->
+    <footer class="bg-primary text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Planes</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#pricing" class="footer-link">Plan Básico</a></li>
+                        <li class="mb-2"><a href="#pricing" class="footer-link">Plan Profesional</a></li>
+                        <li class="mb-2"><a href="#pricing" class="footer-link">Plan Premium</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Recursos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#!" class="footer-link">Blog ganadero</a></li>
+                        <li class="mb-2"><a href="#!" class="footer-link">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Empresa</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="nosotros.html" class="footer-link">Sobre nosotros</a></li>
+                        <li class="mb-2"><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-3 mx-auto mb-md-0 mb-4">
+                     <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                    <p><i class="fas fa-phone-alt me-3"></i> 305 802 8088</p>
+                    <p><i class="fas fa-envelope me-3"></i> soporte@cowshop.com</p>
+                    <p><i class="fas fa-map-marker-alt me-3"></i> Bogotá, Colombia</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center p-4">
+            <p class="mb-0">© <span id="current-year"></span> CowShop. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="js/session.js"></script>
+    <script src="js/planes.js"></script>
+</body>
+</html>

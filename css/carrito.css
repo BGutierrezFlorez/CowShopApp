@@ -1,0 +1,200 @@
+/* ================= FUENTES Y ESTILOS GLOBALES ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Fondo gris claro consistente */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    background: #09735e; /* Fondo oscuro como en index.html */
+    transition: background-color 0.3s ease;
+    padding: 0.5rem 0; /* Ligero ajuste de padding */
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+}
+
+.main-header .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+    text-transform: uppercase; /* ¡NUEVO! Transforma el texto a mayúsculas */
+    letter-spacing: 0.5px; /* Opcional: mejora la legibilidad de las mayúsculas */
+}
+
+.main-header .nav-link:hover {
+    color: #fff;
+}
+
+/* Estilo de subrayado para el enlace activo */
+.main-header .nav-link.active {
+    color: #fff;
+}
+
+.main-header .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: #D4B774; /* Color dorado del botón */
+    border-radius: 2px;
+}
+
+.cart-button {
+    color: #fff;
+}
+
+.cart-count {
+    font-size: 0.65em;
+}
+
+/* Estilos de los botones del header */
+.main-header .btn-secondary {
+    background-color: #D4B774;
+    border-color: #D4B774;
+    color: #212529; /* Texto oscuro para contraste */
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-header .btn-secondary:hover {
+    background-color: #cba85a; /* Tono más oscuro al pasar el cursor */
+    border-color: #cba85a;
+    color: #212529;
+}
+
+.main-header .btn-outline-light {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-header .btn-outline-light:hover {
+    background-color: #fff;
+    color: #09735e; /* Texto verde sobre fondo blanco */
+}
+
+/* Padding para el contenido principal para que no quede debajo del header fijo */
+.header-padding {
+    padding-top: 90px; /* Ajusta este valor si la altura de tu header cambia */
+}
+
+/* ================= ESTILOS DEL CARRITO ================= */
+.cart-product-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.quantity-input-group {
+    max-width: 130px;
+}
+
+.product-list-card, .summary-card {
+    border-radius: 0.75rem !important;
+}
+
+.summary-card.sticky-top {
+    top: 110px; /* Espacio desde la parte superior para que no choque con el header */
+}
+
+.remove-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    color: var(--bs-danger);
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.remove-btn:hover {
+    opacity: 1;
+}
+
+/* --- NUEVAS CLASES PARA MEJORAS --- */
+
+/* Estilo para resaltar precios con el color corporativo */
+.price-highlight {
+    color: #09735e;
+    font-weight: 600;
+}
+
+/* Animación al eliminar un item */
+.cart-item-removing {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        border: 0;
+    }
+}
+
+/* Estilo mejorado para carrito vacío */
+.empty-cart-message {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+}
+.empty-cart-message i {
+    font-size: 3rem;
+    color: #6c757d;
+}
+
+/* Atenuar el resumen de compra si el carrito está vacío */
+#summary-card-body.summary-card-muted {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Feedback visual para el input del cupón */
+.form-control.is-valid {
+    border-color: var(--bs-success);
+}
+.form-control.is-invalid {
+    border-color: var(--bs-danger);
+}
+
+
+/* ================= FOOTER (IDÉNTICO A INDEX.HTML) ================= */
+.main-footer {
+    background-color: #09735e;
+}
+
+.main-footer h5 {
+    color: #fff;
+}
+
+.main-footer a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.2s ease-in-out;
+}
+
+.main-footer a:hover {
+    color: #fff;
+}

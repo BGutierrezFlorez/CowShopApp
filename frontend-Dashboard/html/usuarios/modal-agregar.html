@@ -1,0 +1,104 @@
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAgregarLabel">Agregar Nuevo Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formAgregarUsuario">
+          <!-- Campo Nombre -->
+          <div class="mb-3">
+            <label for="agregar-nombre" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="agregar-nombre" name="nombre" placeholder="Ej: Ana María López" required maxlength="80">
+          </div>
+          
+          <!-- Campo Cédula -->
+          <div class="mb-3">
+            <label for="agregar-cedula" class="form-label">Cédula</label>
+            <input type="text" class="form-control" id="agregar-cedula" name="cedula" placeholder="Ej: 1234567890" required maxlength="20">
+          </div>
+
+          <!-- Campo Fecha de Nacimiento -->
+          <div class="mb-3">
+            <label for="agregar-fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="agregar-fechaNacimiento" name="fechaNacimiento" required>
+          </div>
+          
+          <!-- Campo Correo -->
+          <div class="mb-3">
+            <label for="agregar-correo" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="agregar-correo" name="correo" placeholder="usuario@ejemplo.com" required maxlength="320">
+          </div>
+          
+          <!-- Campo Celular -->
+          <div class="mb-3">
+            <label for="agregar-celular" class="form-label">Celular</label>
+            <input type="tel" class="form-control" id="agregar-celular" name="celular" placeholder="Ej: 3001234567" required maxlength="10" pattern="[0-9]{10}">
+          </div>
+          
+          <!-- Campo Tipo de Usuario -->
+          <div class="mb-3">
+            <label for="agregar-tipoUsuario" class="form-label">Tipo de Usuario</label>
+            <select class="form-select" id="agregar-tipoUsuario" name="tipoUsuario" required>
+              <option selected disabled value="">Seleccione una opción...</option>
+              <option value="Comprador">Comprador</option>
+              <option value="Vendedor">Vendedor</option>
+              <option value="Ambos">Ambos</option>
+              <option value="Administrador">Administrador</option>
+            </select>
+          </div>
+          
+          <!-- Campo Membresía -->
+          <div class="mb-3">
+            <label for="agregar-idMembresia" class="form-label">Membresía</label>
+            <select class="form-select" id="agregar-idMembresia" name="idMembresia" required>
+              <option selected disabled value="">Seleccione una membresía...</option>
+              <option value="1">Básica</option>
+              <option value="2">Profesional</option>
+              <option value="3">Premium</option>
+            </select>
+          </div>
+
+          <!-- Campo Rol -->
+          <div class="mb-3">
+            <label for="agregar-idRol" class="form-label">Rol del Usuario</label>
+            <select class="form-select" id="agregar-idRol" name="idRol" required>
+              <option selected disabled value="">Seleccione un rol...</option>
+              <option value="1">Administrador</option>
+              <option value="2">Usuario</option>
+              <option value="3">Moderador</option>
+              <option value="4">Comprador</option>
+              <option value="5">Vendedor</option>
+              <option value="6">Invitado</option>
+              <option value="7">Supervisor</option>
+              <option value="12">Ambos</option>
+            </select>
+          </div>
+
+          <!-- Campo Contraseña -->
+          <div class="mb-3">
+            <label for="agregar-contraseña" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="agregar-contraseña" name="contraseña" placeholder="Mínimo 6 caracteres" required minlength="6">
+            <div class="form-text">La contraseña debe tener al menos 6 caracteres.</div>
+          </div>
+
+          <!-- Campo Confirmar Contraseña -->
+          <div class="mb-3">
+            <label for="agregar-confirmar-contraseña" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="agregar-confirmar-contraseña" name="confirmarContraseña" placeholder="Repita la contraseña" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="btnGuardarUsuario">Guardar Usuario</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

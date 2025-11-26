@@ -1,0 +1,27 @@
+<!-- Modal Agregar Membresía -->
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formAgregarMembresia">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAgregarLabel">Agregar Membresía</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="agregar-nombre" class="form-label">Nombre</label>
+            <input type="text" id="agregar-nombre" name="agregar-nombre" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="agregar-valor" class="form-label">Valor</label>
+            <input type="number" id="agregar-valor" name="agregar-valor" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

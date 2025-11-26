@@ -1,0 +1,227 @@
+/* ================ ROOT VARIABLES & BOOTSTRAP OVERRIDES ================ */
+:root {
+  /* Paleta de colores de la marca */
+  --primary-color: #09735e;
+  --primary-dark: #074439;
+  --header-bg-color: #0A5A4A; /* Variable para el color del header solicitado */
+  --secondary-color: #BA8F44;
+  --secondary-dark: #A67C3A;
+  --accent-color: #E8C07D;
+  --light-color: #F9F5EB;
+  --text-color: #444444;
+  --dark-color: #333333;
+
+  /* Sobrescribiendo variables de color de Bootstrap con tu paleta */
+  --bs-primary: var(--primary-color);
+  --bs-secondary: var(--secondary-color);
+  --bs-body-color: var(--text-color);
+  --bs-body-bg: var(--light-color);
+  --bs-link-hover-color: var(--secondary-color);
+}
+
+/* ================ BASE & TYPOGRAPHY ================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px; /* Espacio para la navbar fija */
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+h2 .bi {
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+/* ================ SKIP LINK (ACCESSIBILITY) ================ */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--bs-primary);
+    color: white;
+    padding: 1rem;
+    z-index: 1056;
+    transition: transform 0.3s;
+}
+
+.skip-link:focus {
+    transform: translateY(100px);
+}
+
+/* ================ NAVBAR ================ */
+/* Define el color de fondo solicitado para el header */
+.navbar-custom-bg {
+    background-color: var(--header-bg-color);
+}
+
+#main-navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+#main-navbar .logo-img {
+    height: 50px;
+    width: auto;
+    transition: height 0.3s ease-in-out;
+}
+
+#main-navbar.scrolled {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+#main-navbar.scrolled .logo-img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    /* Se ajusta el color para que sea legible en el fondo oscuro */
+    color: rgba(255, 255, 255, 0.85); 
+    position: relative;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 60%;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    /* El color activo/hover ahora es blanco puro para destacar */
+    color: #ffffff; 
+}
+
+
+/* ================ BOTONES PERSONALIZADOS ================ */
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+
+/* ================ HERO SECTION ================ */
+.hero-section {
+    position: relative;
+    background: url('../media/prueba 1.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* ================ CUSTOM CARD STYLES ================ */
+.custom-card {
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* ================ MISION / VISION ================ */
+.mission-vision-img {
+    max-height: 450px;
+    width: auto;
+}
+
+/* ================ PILARES & CONTADORES ================ */
+.pilares-section .pilar-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.pilares-section .counter {
+    font-size: 2.5rem;
+    color: var(--secondary-dark);
+}
+
+/* ================ CALL TO ACTION (CTA) ================ */
+.cta-section {
+    background-color: var(--primary-dark);
+}
+
+.cta-section .btn-light {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ================ FOOTER ================ */
+footer.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ================ ANIMATIONS ON SCROLL ================ */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
