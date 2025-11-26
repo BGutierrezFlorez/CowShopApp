@@ -1,14 +1,14 @@
 package org.example.modelo;
 
 public class Vaca {
-    public int idVaca;
-    public String nombre;
-    public String raza;
-    public int edad;
-    public double peso;
-    public double precio;
-    public String estadoSalud;
-    public int idVendedor;
+    private int idVaca;
+    private String nombre;
+    private  String raza;
+    private int edad;
+    private double peso;
+    private double precio;
+    private String estadoSalud;
+    private int idVendedor;
 
     public Vaca(int idVaca,String nombre, String raza, int edad,
                 double peso, double precio, String estadoSalud, int idVendedor){
@@ -35,7 +35,69 @@ public class Vaca {
         return raza;
     }
 
-    public void setNombre(){
+    public void setNombre(String nombre){
         this.nombre = nombre;
+    }
+    public String getRaza(){
+        return raza;
+    }
+
+    public void setRaza(){
+        this.raza = raza;
+    }
+
+    public int getEdad(){
+        return edad;
+    }
+
+    public void setEdad(int edad){
+        this.edad = edad;
+    }
+
+    public double getPeso(){
+        return peso;
+    }
+
+    public void setPeso(double peso){
+        this.peso = peso;
+    }
+
+    public double getPrecio(){
+        return precio;
+    }
+
+    public void setPrecio(double precio){
+        this.precio = precio;
+    }
+
+    public String getEstadoSalud(){
+        return estadoSalud;
+    }
+
+    public void setEstadoSalud(String estadoSalud){
+        this.estadoSalud = estadoSalud;
+    }
+
+    public int getIdVendedor(){
+        return idVendedor = idVendedor;
+    }
+
+    public void setIdVendedor(){
+        this.idVendedor = idVendedor;
+    }
+
+    @Override
+    public String toString(){
+        return "Vaca {" +
+                "idVaca=" + idVaca +
+                ", nombre=" + nombre + '\'' +
+                ", raza=" + raza + '\'' +
+                ", edad=" + edad +
+                ", peso=" + peso +
+                ", precio=" + precio +
+                ", estadoSalud=" + estadoSalud + '\'' +
+                ", idVendedor=" + idVendedor + "}";
+
+
     }
 }
