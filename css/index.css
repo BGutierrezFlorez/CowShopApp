@@ -1,0 +1,278 @@
+/* =================================================== */
+/* ============== ROOT & COLOR VARIABLES ============= */
+/* =================================================== */
+:root {
+  --primary-color: #0A5A4A;
+  --primary-dark: #074439;
+  --secondary-color: #BA8F44;
+  --secondary-dark: #A67C3A;
+  --accent-color: #E8C07D;
+  --light-color: #F9F5EB;
+  --font-family-base: 'Poppins', sans-serif;
+}
+
+/* =================================================== */
+/* ============= BOOTSTRAP OVERRIDES ================= */
+/* =================================================== */
+body {
+  font-family: var(--font-family-base);
+  padding-top: 80px;
+  background-color: var(--light-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+  border-color: var(--secondary-dark);
+  color: #fff;
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-accent { color: var(--accent-color) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+
+/* =================================================== */
+/* ================= CUSTOM STYLES =================== */
+/* =================================================== */
+
+/* Header */
+.main-header {
+  background-color: var(--primary-color);
+  transition: padding 0.3s ease;
+}
+.main-header .logo-img {
+  height: 60px;
+  transition: height 0.3s ease;
+}
+.main-header.scrolled {
+   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+.main-header.scrolled .logo-img {
+  height: 45px;
+}
+
+/* Navbar */
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-link {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: #fff;
+    border-bottom-color: var(--accent-color);
+}
+
+.main-header .cart-button i {
+    color: #fff;
+}
+
+.main-header .btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.main-header .btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(10, 90, 74, 0.85), rgba(10, 90, 74, 0.85)), url('../media/vacas-fondo.webp') no-repeat center center/cover;
+}
+
+/* Section Title */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--secondary-color);
+  margin: 1rem auto 0;
+}
+
+/* Cards */
+.feature-card, .product-card, .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+.feature-card:hover, .product-card:hover, .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.1) !important;
+}
+.product-card .price {
+    color: var(--primary-color);
+}
+.feature-card {
+    background-color: #fff;
+}
+
+/* PLANES - Destacar Premium */
+.card.border-success {
+    border: 2px solid var(--primary-color) !important;
+}
+.card .badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: var(--secondary-color) !important; /* Dorado para destacar */
+    color: #fff !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* CTA */
+.cta-section {
+    background: var(--primary-color);
+}
+
+/* VIDEO SECTION */
+.video-section-autoplay {
+    position: relative;
+    height: 70vh;
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.video-background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #BA8F44;
+}
+.video-background-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-section-autoplay .container {
+    position: relative;
+    z-index: 2;
+}
+.video-section-autoplay h2,
+.video-section-autoplay .lead {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer */
+footer.main-footer {
+    background-color: #09735e;
+}
+.main-footer a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+.main-footer a:hover {
+    color: var(--accent-color) !important;
+    text-decoration: underline;
+}
+.main-footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Payment Icons */
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+.payment-icon {
+    height: 35px;
+    width: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+.payment-icon:hover {
+    transform: scale(1.1);
+}
+
+/* WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+.whatsapp-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+.whatsapp-button a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--secondary-color);
+  color: white;
+  padding: 1rem;
+  z-index: 1050;
+  transition: transform 0.3s;
+}
+.skip-link:focus {
+  transform: translateY(100px);
+}

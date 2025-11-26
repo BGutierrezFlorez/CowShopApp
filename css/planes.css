@@ -1,0 +1,302 @@
+/* ================ ROOT VARIABLES & BOOTSTRAP OVERRIDES ================ */
+:root {
+  --primary-color: #09735e; /* Color para el footer */
+  --primary-dark: #074439;
+  --header-bg-color: #0A5A4A; /* Color para el header */
+  --secondary-color: #BA8F44; /* Color para botones y CTA final */
+  --secondary-dark: #A67C3A;
+  --accent-color: #E8C07D;
+  --light-color: #F9F5EB;
+  --text-color: #444444;
+  --dark-color: #333333;
+  --danger-color: #dc3545; /* Color para la notificación del carrito */
+
+  --bs-primary: var(--primary-color);
+  --bs-secondary: var(--secondary-color);
+  --bs-body-color: var(--text-color);
+  --bs-body-bg: var(--light-color);
+  --bs-link-hover-color: var(--secondary-color);
+  --bs-accordion-btn-focus-border-color: var(--accent-color);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(186, 143, 68, 1);
+  --bs-accordion-active-color: var(--primary-dark);
+  --bs-accordion-active-bg: rgba(186, 143, 68, 1);
+}
+
+/* ================ BASE & TYPOGRAPHY ================ */
+body { 
+    font-family: 'Poppins', sans-serif; 
+    padding-top: 80px;
+}
+.lead { 
+    font-size: 1.2rem; 
+    font-weight: 400; 
+}
+
+/* ================ SKIP LINK (ACCESSIBILITY) ================ */
+.skip-link { 
+    position: absolute; 
+    top: -100px; 
+    left: 0; 
+    background: var(--bs-primary); 
+    color: white; 
+    padding: 1rem; 
+    z-index: 1056; 
+    transition: transform 0.3s; 
+}
+.skip-link:focus { 
+    transform: translateY(100px); 
+}
+
+/* ================ NAVBAR ================ */
+.navbar-custom-bg { 
+    background-color: var(--header-bg-color); 
+}
+#main-navbar { 
+    transition: all 0.3s ease-in-out; 
+}
+#main-navbar .logo-img { 
+    height: 50px; 
+    width: auto; 
+    transition: height 0.3s ease-in-out; 
+}
+#main-navbar.scrolled { 
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem; 
+}
+#main-navbar.scrolled .logo-img { 
+    height: 40px; 
+}
+.navbar-nav .nav-link { 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+    color: rgba(255, 255, 255, 0.85);
+    position: relative; 
+    padding: 0.5rem; 
+}
+.navbar-nav .nav-link::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 2px; 
+    background-color: var(--secondary-color); 
+    transition: width 0.3s ease-in-out; 
+}
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after { 
+    width: 60%; 
+}
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active { 
+    color: #ffffff;
+}
+
+/* ================ ESTILOS PARA BOTONES Y CARRITO ================ */
+.cart-icon-container {
+    position: relative;
+}
+.cart-icon-container .fa-shopping-cart {
+    font-size: 1.4rem;
+    transition: transform 0.2s ease;
+}
+.cart-icon-container:hover .fa-shopping-cart {
+    transform: scale(1.1);
+}
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--header-bg-color);
+}
+
+.btn-secondary {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: var(--secondary-dark);
+    --bs-btn-active-bg: var(--secondary-dark);
+    --bs-btn-active-border-color: var(--secondary-dark);
+}
+
+.btn-outline-light {
+    --bs-btn-hover-color: var(--dark-color);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: var(--secondary-color);
+    --bs-btn-border-color: var(--secondary-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--secondary-color);
+    --bs-btn-hover-border-color: var(--secondary-color);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--secondary-dark);
+    --bs-btn-active-border-color: var(--secondary-dark);
+}
+
+/* ================ HERO SECTION ================ */
+.hero-section { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-size: cover; 
+    background-position: center center; 
+    padding: 6rem 0; 
+}
+.hero-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+.hero-planes { 
+    background-image: url('../media/planes.jpg'); 
+}
+.hero-planes .hero-overlay { 
+    background: linear-gradient(90deg, rgba(10, 90, 74, 0.9) 0%, rgba(10, 90, 74, 0.6) 100%); 
+}
+.hero-planes span { 
+    color: var(--accent-color); 
+}
+
+/* ================ PLANES PAGE ================ */
+.pricing-toggle .form-switch .form-check-input { 
+    width: 3.5em; 
+    height: 1.75em; 
+    cursor: pointer; 
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-dark);
+}
+.pricing-toggle .form-switch .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-dark);
+}
+.pricing-toggle span { 
+    font-weight: 600; 
+    color: var(--dark-color); 
+}
+.plan-card { 
+    transition: all 0.3s ease; 
+    border: 1px solid #ddd;
+    border-radius: 0.75rem;
+}
+.plan-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; 
+}
+.plan-image { 
+    height: 200px; 
+    width: 100%; 
+    object-fit: cover; 
+    transition: transform 0.3s ease; 
+}
+.plan-card:hover .plan-image { 
+    transform: scale(1.05); 
+}
+.plan-card-featured { 
+    border: 2px solid var(--secondary-color); 
+    position: relative; 
+    transform: scale(1.05); 
+    z-index: 10; 
+}
+.plan-badge { 
+    position: absolute; 
+    top: -15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: var(--secondary-color); 
+    color: white; 
+    padding: 0.3rem 1rem; 
+    border-radius: 50px; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+}
+.pricing-card-title, 
+.price-period { 
+    transition: all 0.3s ease-in-out; 
+}
+
+/* ================ TABLA COMPARATIVA ================ */
+.feature-comparison { 
+    background-color: #ffffff; 
+}
+.feature-comparison .table { 
+    font-size: 1rem; 
+    vertical-align: middle;
+}
+.feature-comparison .table thead th { 
+    color: var(--primary-dark); 
+    font-weight: 600; 
+}
+.feature-comparison .table .fa-check { 
+    font-size: 1.2rem; 
+}
+.feature-comparison .table .fa-times { 
+    font-size: 1.2rem; 
+}
+
+/* ================ ACCORDION (FAQ) ================ */
+.accordion-button:not(.collapsed) { 
+    color: var(--bs-accordion-active-color); 
+    background-color: var(--bs-accordion-active-bg); 
+}
+.accordion-item { 
+    border-radius: 0.5rem !important; 
+    border: 1px solid #dee2e6; 
+    margin-bottom: 1rem; 
+    background-color: #fff;
+}
+.accordion-header { 
+    border-radius: 0.5rem !important; 
+}
+
+/* ================ CTA SECTION ================ */
+.cta-section { 
+    background-color: var(--secondary-color);
+}
+
+/* ================ FOOTER ================ */
+footer.bg-primary { 
+    background-color: var(--primary-color) !important; 
+}
+.footer-link { 
+    color: rgba(255, 255, 255, 0.8); 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+.footer-link:hover { 
+    color: white; 
+    padding-left: 5px; 
+}
+.footer-bottom { 
+    background-color: rgba(0,0,0,0.1); 
+}
+#current-year { 
+    font-weight: 600; 
+    color: var(--accent-color); 
+}
+
+/* ================ ANIMATIONS ON SCROLL ================ */
+.animate-on-scroll { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+.animate-on-scroll.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}

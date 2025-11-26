@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CowShop - Revisa tu carrito de compras y completa tu pedido de ganado de alta calidad.">
+    <title>CowShop - Carrito de Compras</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Font Awesome (Iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/carrito.css">
+
+    <link rel="icon" type="image/png" href="media/favicon.png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <!-- ================== HEADER (IDÉNTICO A INDEX.HTML) ================== -->
+    <header class="main-header fixed-top shadow-sm">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="media/logotipo.png" alt="CowShop Logotipo" class="logo-img">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="primary-navigation">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="planes.html">Planes</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a href="carrito.html" class="cart-button position-relative me-3 text-decoration-none" aria-label="Carrito de compras">
+                            <i class="fas fa-shopping-cart fa-lg"></i>
+                            <span id="cart-counter" class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </a>
+                        <a href="login.html" class="btn btn-secondary me-2">Iniciar sesión</a>
+                        <a href="registrarse.html" class="btn btn-outline-light">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Relleno superior para compensar el header fijo -->
+        <div class="header-padding"></div>
+
+        <div class="container my-5">
+            <!-- Título y Breadcrumb -->
+            <section class="mb-5 text-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="tienda.html">Tienda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+                    </ol>
+                </nav>
+                <h1 class="display-5 fw-bold">Tu Carrito de Compras</h1>
+                <p class="lead text-muted">Revisa tus ejemplares y finaliza la compra.</p>
+            </section>
+            
+            <!-- Contenedor para mostrar alertas dinámicas -->
+            <div id="alert-container" class="mb-4"></div>
+
+            <div class="row g-4">
+                <!-- ================== COLUMNA DE PRODUCTOS ================== -->
+                <div class="col-lg-8">
+                    <div class="card product-list-card shadow-sm border-0">
+                        <div class="card-header bg-white py-3">
+                            <h2 class="h5 mb-0">Tus ejemplares seleccionados</h2>
+                        </div>
+                        <div id="cart-items-container" class="list-group list-group-flush">
+                            <!-- Los productos del carrito se insertarán aquí con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================== COLUMNA DE RESUMEN DE COMPRA ================== -->
+                <aside class="col-lg-4">
+                    <div class="card summary-card shadow-sm border-0 sticky-top">
+                        <div class="card-header bg-white py-3">
+                            <h2 class="h5 mb-0">Resumen de Compra</h2>
+                        </div>
+                        <div id="summary-card-body" class="card-body p-4">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">Subtotal <span id="subtotal-value" class="price-highlight">$0</span></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">Envío <span id="shipping-value" class="price-highlight">$0</span></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">Seguro <span id="insurance-value" class="price-highlight">$0</span></li>
+                                <li id="discount-line" class="list-group-item d-flex justify-content-between align-items-center px-0">Descuento <span id="discount-value">-$0</span></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center fw-bold h5 pt-3 px-0 mt-2 border-top">Total <span id="total-value" class="price-highlight">$0</span></li>
+                            </ul>
+                            <div class="d-grid gap-2 mt-4">
+                                <button class="btn btn-success btn-lg">Proceder al pago</button>
+                                <a href="tienda.html" class="btn btn-outline-secondary">Seguir comprando</a>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0 pb-3 px-4">
+                            <label for="coupon-input" class="form-label small">¿Tienes un cupón?</label>
+                            <div class="input-group">
+                                <input type="text" id="coupon-input" class="form-control" placeholder="Ingresa tu código">
+                                <button class="btn btn-secondary" type="button" id="apply-coupon-btn">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    
+    <!-- ================== MODAL DE CONFIRMACIÓN ================== -->
+    <div class="modal fade" id="confirmRemoveModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Confirmar eliminación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">¿Estás seguro de que quieres eliminar este ejemplar del carrito?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="confirm-remove-btn">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================== FOOTER (IDÉNTICO A INDEX.HTML) ================== -->
+    <footer class="main-footer pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-3 col-lg-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-secondary">CowShop</h5>
+                    <p class="text-white-50">Comprometidos con la excelencia ganadera, ofreciendo genética superior y bienestar animal para el éxito de tu finca.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Compra</h5>
+                    <p><a href="tienda.html" class="text-white-50">Catálogo</a></p>
+                    <p><a href="#!" class="text-white-50">Financiación</a></p>
+                    <p><a href="#!" class="text-white-50">Garantías</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Recursos</h5>
+                    <p><a href="#!" class="text-white-50">Blog</a></p>
+                    <p><a href="#!" class="text-white-50">Guías</a></p>
+                    <p><a href="#!" class="text-white-50">Eventos</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Contacto</h5>
+                    <p class="text-white-50"><i class="fas fa-map-marker-alt me-3"></i>Cra 45 #26-85, Bogotá</p>
+                    <p class="text-white-50"><i class="fas fa-envelope me-3"></i>soporte@cowshop.com</p>
+                    <p class="text-white-50"><i class="fas fa-phone-alt me-3"></i>305 802 8088</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-start text-white-50">© <span id="current-year"></span> CowShop. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-end">
+                        <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    
+    <script src="js/session.js"></script>
+    <!-- Tu script de carrito personalizado -->
+    <script src="js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* ================ ROOT VARIABLES & BOOTSTRAP OVERRIDES ================ */
+:root {
+  --primary-color: #09735e;
+  --primary-dark: #074439;
+  --header-color: #0A5A4A;
+  --secondary-color: #BA8F44;
+  --light-color: #F9F5EB;
+  --text-color: #444444;
+  --dark-color: #333333;
+  --accent-color: #E8C07D;
+
+  --bs-primary: var(--primary-color);
+  --bs-secondary: var(--secondary-color);
+  --bs-body-color: var(--text-color);
+  --bs-body-bg: var(--light-color);
+  --bs-link-hover-color: var(--secondary-color);
+}
+
+/* ================ BASE & TYPOGRAPHY ================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px;
+}
+
+/* ================ NAVBAR ================ */
+#main-navbar { 
+    background-color: var(--header-color);
+    transition: all 0.3s ease-in-out; 
+}
+#main-navbar .logo-img { 
+    height: 50px; 
+    transition: height 0.3s ease-in-out; 
+}
+#main-navbar.scrolled .logo-img { 
+    height: 40px; 
+}
+.navbar-nav .nav-link { 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+    position: relative; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+}
+.navbar-nav .nav-link::after { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 0; 
+    height: 2px; 
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease-in-out; 
+}
+.navbar-nav .nav-link:hover::after, 
+.navbar-nav .nav-link.active::after { 
+    width: 60%; 
+}
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active { 
+    color: var(--accent-color); 
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+.btn-secondary:hover {
+    background-color: #a0742d;
+    border-color: #a0742d;
+}
+
+/* ================ HERO SECTION ================ */
+.hero-section { position: relative; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
+.hero-contact { 
+    min-height: 45vh; 
+    background-image: url('../media/cows-7840982_1280.jpg'); 
+}
+.hero-contact span { color: var(--accent-color); }
+
+/* ================ CONTACT PAGE STYLES ================ */
+.form-control:focus, .form-floating .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(186, 143, 68, 0.25);
+}
+.contact-info-box {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+.contact-info-box i { 
+    color: var(--primary-color);
+    transition: transform 0.3s; 
+}
+.contact-info-box li:hover i { 
+    transform: scale(1.1); 
+}
+#submitButton:disabled {
+    cursor: not-allowed;
+}
+.form-check-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+.form-check-label a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+.form-check-label a:hover {
+    color: var(--primary-dark);
+}
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ================ FOOTER ================ */
+footer {
+    background-color: var(--primary-color);
+}
+.footer-link { 
+    color: rgba(255, 255, 255, 0.8); 
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+}
+.footer-link:hover { 
+    color: white; 
+    padding-left: 5px; 
+}
+.social-link { 
+    font-size: 1.5rem; 
+    color: white; 
+    transition: all 0.3s ease; 
+}
+.social-link:hover { 
+    color: var(--accent-color); 
+    transform: translateY(-3px); 
+}
+.footer-bottom { 
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--primary-dark);
+}
+.payment-methods img { 
+    height: 25px; 
+    opacity: 0.8; 
+    transition: opacity 0.3s;
+    margin: 0 5px;
+}
+.payment-methods img:hover { 
+    opacity: 1; 
+}
+#current-year { 
+    font-weight: 600; 
+}
+
+/* ================ ANIMATIONS ON SCROLL ================ */
+.animate-on-scroll { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+.animate-on-scroll.is-visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}

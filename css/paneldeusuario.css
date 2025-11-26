@@ -1,0 +1,150 @@
+/* =================================================== */
+/* ============ ESTILOS PANEL DE USUARIO ============= */
+/* =================================================== */
+
+/* Sección de membresías */
+.membership-section {
+  padding: 4rem 0;
+  background-color: #fdfbf6;
+  text-align: center;
+}
+
+.membership-section h2 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.membership-section p {
+  color: #555;
+  margin-bottom: 2.5rem;
+}
+
+/* Contenedor de las tarjetas */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjeta de plan */
+.pricing-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen superior */
+.pricing-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contenido */
+.pricing-card-body {
+  padding: 2rem 1.5rem;
+  flex: 1;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  color: #777;
+  font-weight: 400;
+}
+
+/* Lista de beneficios */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-card ul li i {
+  margin-right: 8px;
+  font-size: 1rem;
+}
+
+/* Colores de íconos */
+.pricing-card ul li .fa-check {
+  color: #28a745; /* Verde */
+}
+
+.pricing-card ul li .fa-times {
+  color: #dc3545; /* Rojo */
+}
+
+/* Botón */
+.pricing-card .btn-select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Botón según plan */
+.pricing-card.basic .btn-select {
+  border: 1px solid var(--secondary-color);
+  background: transparent;
+  color: var(--secondary-color);
+}
+.pricing-card.basic .btn-select:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.pricing-card.professional {
+  border: 2px solid var(--secondary-color);
+}
+.pricing-card.professional .btn-select {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+}
+.pricing-card.professional .btn-select:hover {
+  background: var(--primary-dark);
+}
+
+.pricing-card.premium .btn-select {
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+}
+.pricing-card.premium .btn-select:hover {
+  background: var(--primary-color);
+  color: #fff;
+}

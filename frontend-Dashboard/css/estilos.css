@@ -1,0 +1,221 @@
+/* -------------------------------------------------------------------------- */
+/* Variables y paleta de colores                                               */
+/* -------------------------------------------------------------------------- */
+:root {
+  --sidebar-width: 250px;
+  --spacing: 1rem;
+  --font-size-header: 2rem;
+
+  --color-primary: #074439;
+  --color-secondary: #0a5a4a;
+  --color-tertiary: #09735e;
+  --color-accent: #ba8f44;
+  --color-bg: #f1f1f1;
+  --text-light: #ffffff;
+  --border-light: rgba(255, 255, 255, 0.2);
+}
+
+/* Tema oscuro automático */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #181a1b;
+    --text-light: #e1e2e3;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout principal                                                            */
+/* -------------------------------------------------------------------------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--color-bg);
+  transition: background-color 0.3s ease;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--color-primary);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: width 0.3s ease;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--color-secondary);
+  color: var(--text-light);
+  padding: calc(var(--spacing) * 2) var(--spacing);
+  font-size: var(--font-size-header);
+  text-align: center;
+}
+
+.content {
+  flex-grow: 1;
+  padding: var(--spacing);
+  overflow-y: auto;
+  background-color: inherit;
+}
+
+footer {
+  background-color: var(--color-tertiary);
+  padding: var(--spacing);
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Logo                                                                        */
+/* -------------------------------------------------------------------------- */
+.logo-container {
+  padding: var(--spacing);
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.logo-container img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Menú de navegación                                                          */
+/* -------------------------------------------------------------------------- */
+.menu-item {
+  color: var(--text-light);
+  text-decoration: none;
+  display: block;
+  padding: var(--spacing);
+  cursor: pointer;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: var(--color-accent);
+  padding-left: calc(var(--spacing) + 0.5rem);
+  font-weight: bold;
+}
+
+.menu-item:focus-visible {
+  outline: 2px dashed var(--color-accent);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Perfil interactivo                                                           */
+/* -------------------------------------------------------------------------- */
+.profile-container {
+  position: relative;
+}
+
+.profile-container [data-bs-toggle="tooltip"] i {
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.profile-container [data-bs-toggle="tooltip"]:hover i {
+  transform: scale(1.2);
+  color: var(--color-accent);
+}
+
+/* Nombre y rol debajo del avatar */
+.profile-container .user-info {
+  text-align: center;
+  margin-top: calc(var(--spacing) / 2);
+}
+
+.profile-container .user-info .name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.profile-container .user-info .role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--border-light);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Scrollbar personalizado                                                      */
+/* -------------------------------------------------------------------------- */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+  border-radius: 4px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Animación de entrada                                                         */
+/* -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content > div {
+  animation: fadeIn 0.4s ease;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar colapsable (opcional)                                                */
+/* -------------------------------------------------------------------------- */
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsividad móvil                                                          */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .sidebar .menu-item {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: calc(var(--spacing) / 2);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Botones personalizados y overrides                                            */
+/* -------------------------------------------------------------------------- */
+/* Override directo al botón Cerrar Sesión */
+.btn.btn-outline-danger.w-100.mb-2,
+.btn-logout {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn.btn-outline-danger.w-100.mb-2:hover,
+.btn.btn-outline-danger.w-100.mb-2:focus,
+.btn-logout:hover,
+.btn-logout:focus {
+  background-color: var(--color-accent);
+  color: var(--text-light);
+}

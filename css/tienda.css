@@ -1,0 +1,181 @@
+/* ================ ROOT VARIABLES ================ */
+:root {
+  --primary-color: #0A5A4A;
+  --secondary-color: #BA8F44;
+  --accent-color: #E8C07D;
+  --light-color: #F8F9FA;
+  --white: #FFFFFF;
+  --font-family-base: 'Poppins', sans-serif;
+  --border-radius: 0.5rem;
+}
+
+/* ================ ESTILOS BASE ================ */
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--light-color);
+}
+
+/* ================ HEADER PERSONALIZADO ================ */
+.main-header .navbar {
+    background-color: var(--primary-color);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.main-header .logo-img {
+  height: 60px;
+  width: auto;
+}
+.navbar-nav .nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+.navbar-nav .nav-link.active {
+    color: var(--white);
+}
+.btn-login, .btn-registrarse {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--secondary-color);
+}
+.btn-login {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+.btn-login:hover {
+  background-color: #a67c3a;
+  border-color: #a67c3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn-registrarse {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+.btn-registrarse:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ================ HERO SECTION ================ */
+.hero {
+  background: linear-gradient(rgba(10, 90, 74, 0.85), rgba(10, 90, 74, 0.85));
+}
+.hero h1 span {
+  color: var(--accent-color);
+}
+
+/* ================ FILTROS Y PRODUCTOS ================ */
+.filters-card {
+  background-color: var(--white);
+  border: 1px solid #dee2e6;
+}
+.list-group-item {
+  font-weight: 500;
+  color: #495057;
+}
+.list-group-item.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.product-item {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: var(--border-radius);
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.15) !important;
+}
+.product-card .price {
+    color: var(--primary-color);
+}
+.product-card .btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.product-card .btn-secondary:hover {
+    background-color: #a67c3a;
+    border-color: #a67c3a;
+    transform: scale(1.02);
+}
+.product-card .badge {
+    z-index: 10;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ================ FOOTER PERSONALIZADO ================ */
+.main-footer {
+  background-color: #09735e;
+}
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+.main-footer .text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+/* ================ CLASE DE ACCESIBILIDAD ================ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  z-index: 1056;
+  transition: transform 0.3s;
+}
+.skip-link:focus {
+  transform: translateY(100px);
+}
+
+/* ================ MÉTODOS DE PAGO (FOOTER) ================ */
+.payment-icon {
+    height: 40px;
+    max-width: 65px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+.payment-icon:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}

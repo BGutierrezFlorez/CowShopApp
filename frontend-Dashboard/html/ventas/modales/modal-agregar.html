@@ -1,0 +1,84 @@
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAgregarLabel">Agregar Nueva Venta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formAgregarVenta">
+          <!-- Campo ID Comprador -->
+          <div class="mb-3">
+            <label for="agregar-comprador" class="form-label">ID del Comprador</label>
+            <input type="number" class="form-control" id="agregar-comprador" name="comprador" placeholder="Ej: 123"
+              required>
+          </div>
+
+          <!-- Campo Fecha Venta -->
+          <div class="mb-3">
+            <label for="agregar-fechaVenta" class="form-label">Fecha de Venta</label>
+            <input type="date" class="form-control" id="agregar-fechaVenta" name="fechaVenta" required>
+          </div>
+
+          <!-- Sección de Vacas -->
+          <div class="mb-3">
+            <label class="form-label">Vacas en la Venta</label>
+            <div id="vacasContainer">
+              <div class="vaca-item border p-3 mb-3 rounded">
+                <div class="row">
+                  <div class="col-md-5">
+                    <label class="form-label">ID de la Vaca</label>
+                    <input type="number" class="form-control" name="idVaca" placeholder="ID de la vaca" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Precio</label>
+                    <input type="number" class="form-control" name="precioVaca" placeholder="Precio de la vaca"
+                      required>
+                  </div>
+
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="eliminarVaca(this)">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="agregarVaca()">
+            <i class="fas fa-plus"></i> Agregar otra vaca
+          </button>
+      </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      <button type="submit" class="btn btn-primary" id="btnGuardarVenta">Guardar Venta</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  function agregarVaca() {
+    const container = document.getElementById('vacasContainer');
+    const nuevaVaca = document.querySelector('.vaca-item').cloneNode(true);
+
+    // Limpiar valores del clon
+    nuevaVaca.querySelectorAll('input, select').forEach(input => {
+      input.value = '';
+    });
+
+    container.appendChild(nuevaVaca);
+  }
+
+  function eliminarVaca(btn) {
+    const vacasItems = document.querySelectorAll('.vaca-item');
+    if (vacasItems.length > 1) {
+      btn.closest('.vaca-item').remove();
+    } else {
+      alert('Debe haber al menos una vaca en la venta');
+    }
+  }
+</script>

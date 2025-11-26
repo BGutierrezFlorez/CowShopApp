@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CowShop - Acerca de Nosotros</title>
+    
+    <!-- Bootstrap 5.3.8 CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="css/nosotros.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+    <!-- ================== HEADER / NAVBAR ================== -->
+    <header>
+        <!-- Clases actualizadas para el nuevo color de header -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom-bg fixed-top shadow-sm" id="main-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="CowShop - Página de inicio">
+                    <img src="media/logotipo.png" alt="CowShop - Tienda especializada en ganado bovino" class="logo-img" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-navigation" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="primary-navigation">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="planes.html">Planes</a></li>
+                    </ul>
+                    <a href="login.html" class="btn btn-secondary ms-lg-2">Iniciar sesión</a>
+                    <a href="login.html" class="btn btn-secondary ms-lg-2">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- ================== HERO SECTION ================== -->
+        <section class="hero-section text-center text-white">
+            <div class="hero-overlay"></div>
+            <div class="container position-relative">
+                <h1 class="display-3 fw-bold animate-on-scroll">Acerca de Nosotros</h1>
+            </div>
+        </section>
+
+        <!-- ================== INTRO MESSAGE ================== -->
+        <section class="container my-5 py-4">
+            <p class="lead text-center fw-bold text-dark animate-on-scroll">
+                Más que una plataforma de ventas, somos un punto de encuentro para los apasionados del campo y un aliado esencial para ganaderos locales y pequeños productores.
+            </p>
+        </section>
+        
+        <!-- ================== CARDS SECTION ================== -->
+        <section class="container my-5">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="card h-100 text-center shadow-sm custom-card">
+                        <img src="media/cebu.png" class="card-img-top p-3" alt="Vaca Cebú">
+                        <div class="card-body">
+                            <p class="card-text">Aquí no solo encontrarás vacas, sino también historias de esfuerzo, tradición y dedicación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll" data-delay="100">
+                    <div class="card h-100 text-center shadow-sm custom-card">
+                        <img src="media/vaca2.png" class="card-img-top p-3" alt="Vaca pastando">
+                        <div class="card-body">
+                            <p class="card-text">Cada animal que ofrecemos representa el trabajo incansable de quienes día a día cultivan la excelencia en la ganadería.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-on-scroll" data-delay="200">
+                    <div class="card h-100 text-center shadow-sm custom-card">
+                        <img src="media/gris.jpg" class="card-img-top p-3" alt="Vaca Gris de perfil">
+                        <div class="card-body">
+                            <p class="card-text">Buscamos construir una comunidad que valore el esfuerzo y el valor del sector ganadero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== MISION / VISION ================== -->
+        <section class="container my-5 py-5">
+            <div class="row align-items-center mb-5 pb-5 animate-on-scroll">
+                <div class="col-lg-7 order-lg-2">
+                    <h2 class="fw-bold text-success"><i class="bi bi-bullseye me-2"></i>Nuestra Misión</h2>
+                    <p>En CowShop, ubicado en La Calera, Cundinamarca, ofrecemos una plataforma confiable y accesible para la compra y venta de bovinos de alta calidad. Nos comprometemos con el bienestar animal y la sostenibilidad de las fincas de nuestros usuarios, garantizando bovinos saludables y productivos. Nuestra misión es facilitar un proceso de compra y venta eficiente, seguro y transparente, utilizando tecnología de vanguardia para conectar directamente a productores y compradores, impulsando el crecimiento y la innovación del sector ganadero.</p>
+                </div>
+                <div class="col-lg-5 order-lg-1 text-center">
+                    <img src="media/pardosuiza.jpg" alt="Ilustración para la misión de CowShop" class="img-fluid mission-vision-img">
+                </div>
+            </div>
+            <div class="row align-items-center animate-on-scroll">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold text-success"><i class="bi bi-eye-fill me-2"></i>Nuestra Visión</h2>
+                    <p>Ser la plataforma líder en la compra y venta de bovinos en La Calera, Cundinamarca, y sus alrededores, destacándonos por nuestra calidad, innovación y compromiso con el bienestar animal. En los próximos tres años, buscamos expandirnos a otros municipios de Cundinamarca y más allá, brindando una experiencia integral que permita a los productores optimizar sus negocios y los compradores acceder a bovinos de alto rendimiento. Queremos transformar la industria ganadera mediante el uso de tecnología, impulsando un desarrollo económico y sostenible que revolucione el sector a nivel regional.</p>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="media/cows-4383468_1280-1.jpg" alt="Ilustración para la visión de CowShop" class="img-fluid mission-vision-img">
+                </div>
+            </div>
+        </section>
+        
+        <!-- ================== PILARES CON CONTADORES ================== -->
+        <section class="pilares-section bg-white py-5 my-5">
+            <div class="container text-center" id="counters-section">
+                <h2 class="fw-bold mb-5 animate-on-scroll">Nuestros Pilares</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4 animate-on-scroll">
+                        <i class="bi bi-shield-check pilar-icon"></i>
+                        <h3 class="counter fw-bold my-2" data-target="100">0</h3>
+                        <p class="text-muted">Ganaderos Verificados</p>
+                    </div>
+                    <div class="col-md-4 mb-4 animate-on-scroll" data-delay="150">
+                        <i class="bi bi-heart-pulse pilar-icon"></i>
+                        <h3 class="counter fw-bold my-2" data-target="500">0</h3>
+                        <p class="text-muted">Animales con Bienestar Garantizado</p>
+                    </div>
+                    <div class="col-md-4 mb-4 animate-on-scroll" data-delay="300">
+                        <i class="bi bi-people-fill pilar-icon"></i>
+                        <h3 class="counter fw-bold my-2" data-target="1500">0</h3>
+                        <p class="text-muted">Miembros en la Comunidad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== CALL TO ACTION (CTA) ================== -->
+        <section class="cta-section py-5 text-center text-white">
+            <div class="container animate-on-scroll">
+                <h2 class="display-5 fw-bold">Únete a Nuestra Comunidad</h2>
+                <p class="lead my-4">Explora el ganado disponible en nuestra tienda o contáctanos para saber más sobre cómo podemos ayudarte.</p>
+                <a href="tienda.html" class="btn btn-light btn-lg me-2">Ir a la Tienda</a>
+                <a href="contacto.html" class="btn btn-secondary btn-lg">Contáctanos</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================== FOOTER ================== -->
+    <footer class="bg-primary text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Nuestros Servicios</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li class="mb-2"><a href="tienda.html" class="footer-link">Tienda</a></li>
+                        <li class="mb-2"><a href="nosotros.html" class="footer-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Información</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#!" class="footer-link">Transparencia</a></li>
+                        <li class="mb-2"><a href="#!" class="footer-link">Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#!" class="footer-link">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>© 2025 CowShop | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    
+    <script src="js/session.js"></script>
+    <!-- Tu JS personalizado -->
+    <script src="js/nosotros.js"></script>
+</body>
+</html>

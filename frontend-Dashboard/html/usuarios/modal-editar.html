@@ -1,0 +1,114 @@
+<!-- Modal de edición de usuario -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content" id="formEditarUsuario">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEditarLabel">Editar Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Campo oculto para enviar el ID único del usuario al backend -->
+        <input type="hidden" name="idU" id="editar-idU" />
+
+        <!-- ID del usuario (visible pero no editable) -->
+        <div class="mb-3">
+          <label for="editar-id" class="form-label">ID Usuario</label>
+          <input type="text" name="id" id="editar-id" class="form-control" readonly />
+        </div>
+
+        <!-- Campos de datos personales -->
+        <div class="mb-3">
+          <label for="editar-nombre" class="form-label">Nombre</label>
+          <input type="text" name="nombre" id="editar-nombre" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-cedula" class="form-label">Cédula</label>
+          <input type="text" name="cedula" id="editar-cedula" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+          <input type="date" name="fechaNacimiento" id="editar-fechaNacimiento" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-correo" class="form-label">Correo</label>
+          <input type="email" name="correo" id="editar-correo" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-celular" class="form-label">Celular</label>
+          <input type="text" name="celular" id="editar-celular" class="form-control" required />
+        </div>
+
+        <!-- Campos de configuración del sistema -->
+        <div class="mb-3">
+          <label for="editar-tipoUsuario" class="form-label">Tipo de Usuario</label>
+          <select class="form-select" id="editar-tipoUsuario" name="tipoUsuario" required>
+            <option selected disabled value="">Seleccione una opción...</option>
+            <option value="Comprador">Comprador</option>
+            <option value="Vendedor">Vendedor</option>
+            <option value="Ambos">Ambos</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-idMembresia" class="form-label">Membresía</label>
+          <select class="form-select" id="editar-idMembresia" name="idMembresia" required>
+            <option selected disabled value="">Seleccione una membresía...</option>
+            <option value="1">Básica</option>
+            <option value="2">Profesional</option>
+            <option value="3">Premium</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="editar-idRol" class="form-label">Rol</label>
+          <select class="form-select" id="editar-idRol" name="idRol" required>
+            <option selected disabled value="">Seleccione un rol...</option>
+            <option value="1">Administrador</option>
+            <option value="2">Usuario</option>
+            <option value="3">Moderador</option>
+            <option value="4">Comprador</option>
+            <option value="5">Vendedor</option>
+            <option value="6">Invitado</option>
+            <option value="7">Supervisor</option>
+            <option value="8">Soporte</option>
+            <option value="12">Ambos</option>
+          </select>
+        </div>
+        
+        <div class="mb-3">
+          <label for="editar-estado" class="form-label">Estado</label>
+          <select class="form-select" id="editar-estado" name="estado" required>
+            <option selected disabled value="">Seleccione un estado...</option>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+        </div>
+        
+        <hr>
+        
+        <!-- Sección para cambiar la contraseña (opcional) -->
+        <p class="form-text">Solo rellene los siguientes campos si desea cambiar la contraseña.</p>
+
+        <div class="mb-3">
+          <label for="editar-contrasena" class="form-label">Nueva Contraseña</label>
+          <input type="password" class="form-control" id="editar-contrasena" name="contrasena" placeholder="Dejar en blanco para no cambiar"/>
+        </div>
+           
+        <div class="mb-3">
+          <label for="editar-confirmar-contrasena" class="form-label">Confirmar Nueva Contraseña</label>
+          <input type="password" class="form-control" id="editar-confirmar-contrasena" name="confirmarContrasena" placeholder="Repita la nueva contraseña" />
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>

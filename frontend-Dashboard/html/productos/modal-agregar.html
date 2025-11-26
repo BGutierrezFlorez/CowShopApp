@@ -1,0 +1,76 @@
+<div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAgregarLabel">Agregar Nueva Vaca</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formAgregarVaca">
+          <!-- Campo Nombre -->
+          <div class="mb-3">
+            <label for="agregar-nombre" class="form-label">Nombre de la Vaca</label>
+            <input type="text" class="form-control" id="agregar-nombre" name="nombre" placeholder="Ej: Bessie" required maxlength="80">
+          </div>
+          
+          <!-- Campo Raza -->
+          <div class="mb-3">
+            <label for="agregar-raza" class="form-label">Raza</label>
+            <select class="form-select" id="agregar-raza" name="raza" required>
+              <option selected disabled value="">Seleccione una raza...</option>
+              <option value="Holstein">Holstein</option>
+              <option value="Angus">Angus</option>
+              <option value="Brahman">Brahman</option>
+              <option value="Charolais">Charolais</option>
+              <option value="Simmental">Simmental</option>
+              <option value="Hereford">Hereford</option>
+              <option value="Limousin">Limousin</option>
+              <option value="Otra">Otra</option>
+            </select>
+          </div>
+
+          <!-- Campo Peso -->
+          <div class="mb-3">
+            <label for="agregar-peso" class="form-label">Peso (kg)</label>
+            <input type="number" class="form-control" id="agregar-peso" name="peso" placeholder="Ej: 450" required min="100" max="1500" step="0.1">
+          </div>
+          
+          <!-- Campo Precio -->
+          <div class="mb-3">
+            <label for="agregar-precio" class="form-label">Precio (COP)</label>
+            <input type="number" class="form-control" id="agregar-precio" name="precio" placeholder="Ej: 2500000" required min="0" step="1000">
+            <div class="form-text">Ingrese el precio en pesos colombianos.</div>
+          </div>
+          
+          <!-- Campo ID Vendedor -->
+          <div class="mb-3">
+            <label for="agregar-idVendedor" class="form-label">ID del Vendedor</label>
+            <input type="text" class="form-control" id="agregar-idVendedor" name="idVendedor" placeholder="Ej: VEND001" required maxlength="20">
+          </div>
+          
+          <!-- Campo Estado de Salud -->
+          <div class="mb-3">
+            <label for="agregar-estadoSalud" class="form-label">Estado de Salud</label>
+            <select class="form-select" id="agregar-estadoSalud" name="estadoSalud" required>
+              <option selected disabled value="">Seleccione el estado...</option>
+              <option value="Excelente">Excelente</option>
+              <option value="Muy Bueno">Muy Bueno</option>
+              <option value="Bueno">Bueno</option>
+              <option value="Regular">Regular</option>
+              <option value="Enfermo">Enfermo</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary" id="btnGuardarVaca">Guardar Vaca</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

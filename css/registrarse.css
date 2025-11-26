@@ -1,0 +1,307 @@
+/* Variables de colores */
+:root {
+    --primary-color: #09735e;
+    --secondary-color: #BA8F44;
+    --light-color: #F9F5EB;
+    --dark-color: #333333;
+    --gray-color: #6c757d;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Contenedor principal */
+.auth-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* Sección del formulario */
+.form-section {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 500px;
+}
+
+.back-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.form-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.form-subtitle {
+    color: var(--gray-color);
+    margin-bottom: 2rem;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-control {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(186, 143, 68, 0.25);
+    outline: none;
+}
+
+/* Validación de inputs */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: var(--error-color);
+    background-image: none;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    border-color: var(--success-color);
+    background-image: none;
+}
+
+/* Validación de checkbox términos */
+.form-check-input.is-invalid,
+.was-validated .form-check-input:invalid {
+    border: 1px solid var(--error-color);
+}
+
+.date-format {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    margin-top: 0.25rem;
+}
+
+/* Contenedor de contraseña */
+.password-container {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    border-left: 0;
+    border-color: #ced4da;
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+    margin-top: 0;
+}
+
+/* Botón de enviar */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #a67c3a;
+    border-color: #a67c3a;
+}
+
+.btn-outline-light {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    flex: 1;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Indicador de fortaleza de contraseña CORREGIDO */
+#password-strength-meter {
+    height: 5px;
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#password-strength-meter.weak .strength-bar {
+    width: 33.3%;
+    background-color: var(--error-color);
+}
+
+#password-strength-meter.medium .strength-bar {
+    width: 66.6%;
+    background-color: #ffc107;
+}
+
+#password-strength-meter.strong .strength-bar {
+    width: 100%;
+    background-color: var(--success-color);
+}
+
+/* Texto de ayuda para contraseña */
+.form-text {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    color: var(--gray-color);
+}
+
+/* Mensajes de validación */
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--error-color);
+}
+
+.is-invalid ~ .invalid-feedback,
+.was-validated :invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Mensajes de alerta */
+.alert {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Media Query para Responsividad */
+@media (max-width: 767.98px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .welcome-section {
+        order: 1;
+        padding: 3rem 1.5rem !important;
+    }
+
+    .form-section {
+        order: 0;
+    }
+
+    body {
+        padding: 1rem;
+    }
+
+    .form-content h1 {
+        font-size: 1.75rem;
+    }
+}
