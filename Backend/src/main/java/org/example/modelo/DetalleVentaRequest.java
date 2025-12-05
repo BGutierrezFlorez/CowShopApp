@@ -34,4 +34,5 @@ public class DetalleVentaRequest {
     public void setDescuento(double descuento){
         this.descuento = descuento;
     }
+
 }
